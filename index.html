@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bank Card</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="main.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <div class="form-container">
+            <form id="cardForm">
+                <div class="form-group">
+                    <label for="bankName">Название банка:</label>
+                    <select id="bankName" required>
+                        <option value="" disabled selected>Не выбрано</option>
+                        <option value="images/sber.png">СберБанк</option>
+                        <option value="images/tinkoff.png">Тинькофф</option>
+                        <option value="images/vtb.jpg">ВТБ</option>
+                        <option value="images/alfa.jpg">Альфа-банк</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="cardNumber">Номер карты:</label>
+                    <input type="text" id="cardNumber" placeholder="1234 1234 1234 1234" maxlength="19" required>
+                </div>
+                <div class="form-group">
+                    <label for="cardHolder">Имя держателя карты:</label>
+                    <input type="text" id="cardHolder" required>
+                </div>
+                <div class="form-group">
+                    <label for="expiryMonth">Месяц окончания:</label>
+                    <input type="number" id="expiryMonth" min="1" max="12" required>
+                </div>
+                <div class="form-group">
+                    <label for="expiryYear">Год окончания:</label>
+                    <input type="number" id="expiryYear" min="24" max="50" required>
+                </div>
+                <div class="form-group">
+                    <label for="paymentSystem">Тип платежной системы:</label>
+                    <select id="paymentSystem" required>
+                        <option value="" disabled selected>Не выбрано</option>
+                        <option value="images/visa.jpg">Visa</option>
+                        <option value="images/mastercard.png">MasterCard</option>
+                        <option value="images/mir.png">Мир</option>
+                    </select>
+                </div>
+                <button type="submit">Добавить карту</button>
+            </form>
+            <div class="card-preview">
+                <div class="card-body">
+                    <img id="bankLogo" src="" alt="Bank Logo">
+                    <h1 id="previewCardNumber"></h1>
+                    <div class="card-details">
+                        <h3 id="previewCardHolder"></h3>
+                        <h3 id="previewExpiryDate"></h3>
+                        <img id="paymentSystemLogo" src="" alt="Payment System Logo">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <table id="cardData">
+            <thead>
+                <tr>
+                    <th>Банк</th>
+                    <th>Платежная система</th>
+                    <th>Номер карты</th>
+                    <th>Имя держателя</th>
+                    <th>Дата окончания</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
